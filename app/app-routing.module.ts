@@ -1,12 +1,8 @@
-import { NgModule, Component } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router'; 
-import { ProfileComponent } from './profile/profile.component'
-import { ApplyComponent } from './apply/apply.component';
-import { LoginComponent } from './login/login.component';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { BooklistComponent } from './booklist/booklist.component';
 
-const routes: Routes = [{path:"h",component:ProfileComponent},
-{path:"l",component:ApplyComponent},
-{path:"l",component:LoginComponent}];
+const routes: Routes = [{path:"booklist",component:BooklistComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

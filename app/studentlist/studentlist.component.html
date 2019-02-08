@@ -1,0 +1,17 @@
+<p>
+  studentlist works!
+</p>
+selected Rollno:{{selbook.sRollno}}
+<br/>
+selected name:{{selbook.sname}}
+<br/>
+
+selected Batch:{{selbook.sBatch}}
+<br/>
+selected Department:{{selbook.sDepartment}}
+<br/>
+
+<app-book [Rollno]="item.Rollno" 
+[name]="item.name" [Batch]="item.Batch" [Department]="item.Department"
+ *ngFor="let item of Bookdetails"
+ (sendBook)="addbook($event)"></app-book>
