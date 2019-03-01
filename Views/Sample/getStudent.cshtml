@@ -1,0 +1,97 @@
+﻿@model clinicapp.Models.Student
+
+@{
+    ViewBag.Title = "getStudent";
+}
+
+<h2>getStudent</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Student</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Sname, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Sname)
+                @Html.ValidationMessageFor(model => model.Sname)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Saddress, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Saddress)
+                @Html.ValidationMessageFor(model => model.Saddress)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Semail, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Semail)
+                @Html.ValidationMessageFor(model => model.Semail)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Gender, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                male
+                @Html.RadioButtonFor(m => m.Gender,"Male")
+                female
+                @Html.RadioButtonFor(m => m.Gender,"Female")
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.CourseList, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("CourseList",new SelectList(Enum.GetNames(typeof(clinicapp.Models.Course))),"Select")
+                @Html.ValidationMessageFor(model => model.CourseList)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Susername, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Susername)
+                @Html.ValidationMessageFor(model => model.Susername)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Spassword, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Spassword)
+                @Html.ValidationMessageFor(model => model.Spassword)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Sconfirmpassword, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Sconfirmpassword)
+                @Html.ValidationMessageFor(model => model.Sconfirmpassword)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+        </div>
+    
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+        
+
